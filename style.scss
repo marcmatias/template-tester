@@ -1,10 +1,45 @@
+// Vars
+:root {
+  --c-ma-bg: #fff;
+  --c-ma-border: #ccc;
+  --c-ma-link: #0d6efd;
+  --c-ma-nav-bg: #f9faf9;
+  --c-ma-nav-tab-bg: var(--c-ma-bg);
+  --c-ma-text: #333;
+}
+
+.dark {
+  --c-ma-bg: #141414;
+  --c-ma-border: #6c6c6c;
+  --c-ma-link: #00c2ff;
+  --c-ma-nav-bg: #343434;
+  --c-ma-nav-tab-bg: var(--c-ma-bg);
+  --c-ma-text: #f2f2f2;
+}
+
 body {
+  background-color: var(--c-ma-bg);
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+// Styles
+.theme-toggle {
+  text-align: end;
+  line-height: 0rem;
+  padding: .5rem 1.5rem;
+  margin-top: 3rem;
+
+  &__icon {
+    cursor: pointer;
+    color: var(--c-ma-text);
+  }
 }
 
 .ma-title {
   padding: 0rem 1rem;
+  color: var(--c-ma-text);
 }
+
 .ma-nav {
   margin: 0rem 1rem;
 
@@ -13,23 +48,25 @@ body {
     padding: .5rem 0rem;
     margin: 0rem;
     display: flex;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid var(--c-ma-border);
+    background-color: var(--c-ma-nav-bg);
+    border-top-left-radius: .25rem;
+    border-top-right-radius: .25rem;
   }
 
   &__item {
     padding: .5rem 1rem;
     text-decoration: none;
-    color: #0d6efd;
+    color: var(--c-ma-link);
 
     &--active {
-      color: #333;
-      background-color: #fff;
-      border: 1px solid #ccc;
+      color: var(--c-ma-text);
+      background-color: var(--c-ma-nav-tab-bg);
+      border: 1px solid var(--c-ma-border);
       border-bottom: 0px;
       border-top-left-radius: .25rem;
       border-top-right-radius: .25rem;
-      padding: .5rem 1rem .56rem;
+      padding: .45rem 1rem .56rem;
     }
   }
-
 }
