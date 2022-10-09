@@ -1,8 +1,10 @@
-version: '3'
+version: "3"
 services:
   app:
     build: .
+    user: '1000:1000'
     container_name: tt_development
+    command: sh wrapper_script.sh
     ports:
       - "3000:3000"
     volumes:
