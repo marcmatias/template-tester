@@ -21,6 +21,19 @@
   --c-text: var(--c-secondary);
 }
 
+// Select cursor text color
+::-moz-selection { /* Code for Firefox */
+  color: var(--c-primary);
+  background: var(--c-secondary);
+}
+
+::selection {
+  color: var(--c-primary);
+  background: var(--c-secondary);
+}
+
+// Styles
+
 body {
   background-color: var(--c-bg);
   font-family: system-ui, sans-serif;
@@ -39,14 +52,15 @@ body {
   }
 }
 
+// Components
+
 .header {
+  align-items: center;
+  border-bottom: thin solid;
+  display: flex;
   font-size: 1rem;
   font-weight: 700;
   padding: 1rem;
-  border-bottom: thin solid;
-  background-color: var(--c-primary);
-  display: flex;
-  align-items: center;
 }
 
 .container {
@@ -55,11 +69,15 @@ body {
   width: 100%;
   max-width: 96rem;
   box-sizing: border-box;
+
+  @include sm {
+    padding: 0rem 1rem;
+  }
 }
 
 .post {
   margin: 4rem 0rem;
-  outline: .1rem solid;
+  outline: thin solid;
   padding: 5rem;
 
   @include md {
@@ -68,8 +86,8 @@ body {
   }
 
   @include sm {
-    margin-top: 1rem;
-    padding: 1rem;
+    margin-top: 1.5rem;
+    padding: 1.5rem;
   }
 
   &__title {
@@ -81,7 +99,7 @@ body {
     }
 
     @include sm {
-      font-size: 1.5rem;
+      font-size: 2rem;
     }
   }
 
@@ -104,6 +122,15 @@ body {
    border: 0px none;
    display: block;
    color: inherit;
+
+    @include lg {
+      aspect-ratio: 8 / 1;
+    }
+
+    @include md {
+      aspect-ratio: 6 / 1;
+    }
+
   }
 
   &__text {
@@ -123,11 +150,11 @@ body {
   font-size: 1.25rem;
 
     @include md {
-      font-size: 1rem;
+      font-size: 1.15rem;
     }
 
     @include sm {
-      font-size: .85rem;
+      font-size: 1.05rem;
     }
 
   &__text {
@@ -140,7 +167,7 @@ body {
     }
 
     @include sm {
-      font-size: 1rem;
+      font-size: 1.2rem;
     }
   }
 }
@@ -160,6 +187,7 @@ body {
     height: 2rem;
     color: currentcolor;
 
+    // Generating opacity from 0.1 to 1.0
     @for $i from 1 through 10
     {
       &--#{$i} {
