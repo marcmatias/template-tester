@@ -1,3 +1,5 @@
+@import "../abstracts/media-queries.scss";
+
 // Vars
 :root {
   --c-primary: #cbea95;
@@ -49,7 +51,7 @@ body {
 
 .container {
   padding: 0rem 2rem;
-  margin: 0rem auto; 
+  margin: 0rem auto;
   width: 100%;
   max-width: 96rem;
   box-sizing: border-box;
@@ -60,12 +62,12 @@ body {
   outline: .1rem solid;
   padding: 5rem;
 
-  @media screen and (max-width: 831px) {
+  @include md {
     margin-top: 2rem;
     padding: 2rem;
   }
 
-  @media screen and (max-width: 640px) {
+  @include sm {
     margin-top: 1rem;
     padding: 1rem;
   }
@@ -74,11 +76,11 @@ body {
     font-size: 4rem;
     margin: 0rem;
 
-    @media screen and (max-width: 831px) {
+    @include md {
       font-size: 3rem;
     }
 
-    @media screen and (max-width: 640px) {
+    @include sm {
       font-size: 1.5rem;
     }
   }
@@ -101,12 +103,16 @@ body {
    aspect-ratio: 12 / 1;
    border: 0px none;
    display: block;
-   color: inherit; 
+   color: inherit;
   }
 
   &__text {
     line-height: 1.5;
     font-size: 1.25rem;
+
+    @include md {
+      font-size: 1rem;
+    }
   }
 }
 
@@ -116,10 +122,26 @@ body {
   border-left: .5rem solid;
   font-size: 1.25rem;
 
+    @include md {
+      font-size: 1rem;
+    }
+
+    @include sm {
+      font-size: .85rem;
+    }
+
   &__text {
     font-size: 2rem;
     font-weight: 900;
     margin-bottom: .5rem;
+
+    @include md {
+      font-size: 1.5rem;
+    }
+
+    @include sm {
+      font-size: 1rem;
+    }
   }
 }
 
