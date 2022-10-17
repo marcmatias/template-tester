@@ -18,7 +18,7 @@ module.exports = (env, argv) => {
       outputModule: true,
     },
     entry: {
-      style: "./style.scss",
+      style: "./src/assets/scss/main.scss",
     },
     output: {
       filename: "[name].min.js",

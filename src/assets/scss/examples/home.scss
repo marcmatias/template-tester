@@ -1,0 +1,148 @@
+// Vars
+:root {
+  --c-primary: #cbea95;
+  --c-secondary: #0f273e;
+
+  --c-bg: var(--c-primary);
+  --c-border: #ccc;
+  --c-link: #0d6efd;
+  --c-text: var(--c-secondary);
+}
+
+.dark {
+  --c-primary: #0f273e;
+  --c-secondary: #cbea95;
+
+  --c-bg: var(--c-primary);
+  --c-border: #6c6c6c;
+  --c-link: #00c2ff;
+  --c-text: var(--c-secondary);
+}
+
+body {
+  background-color: var(--c-bg);
+  font-family: system-ui, sans-serif;
+  color: var(--c-text);
+  margin: 0rem;
+}
+
+.theme-toggle {
+  text-align: end;
+  line-height: 0rem;
+  padding: 0 1rem;
+
+  &__icon {
+    cursor: pointer;
+    color: var(--c-text);
+  }
+}
+
+.header {
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 1rem;
+  border-bottom: thin solid;
+  background-color: var(--c-primary);
+  display: flex;
+  align-items: center;
+}
+
+.container {
+  padding: 0rem 2rem;
+  margin: 0rem auto; 
+  width: 100%;
+  max-width: 96rem;
+  box-sizing: border-box;
+}
+
+.post {
+  margin: 4rem 0rem;
+  outline: .1rem solid;
+  padding: 5rem;
+
+  @media screen and (max-width: 831px) {
+    margin-top: 2rem;
+    padding: 2rem;
+  }
+
+  @media screen and (max-width: 640px) {
+    margin-top: 1rem;
+    padding: 1rem;
+  }
+
+  &__title {
+    font-size: 4rem;
+    margin: 0rem;
+
+    @media screen and (max-width: 831px) {
+      font-size: 3rem;
+    }
+
+    @media screen and (max-width: 640px) {
+      font-size: 1.5rem;
+    }
+  }
+
+  &__sub-title {
+    font-size: 1.25rem;
+    margin: 0rem;
+  }
+
+  &__hr-line {
+    background-color: currentcolor;
+    color: inherit;
+    display: block;
+    height: .25rem;
+  }
+
+  &__hr-stripe {
+   background-image: repeating-linear-gradient(-45deg, transparent, transparent 8px, currentcolor 8px, currentcolor 12px);
+   padding: 0px;
+   aspect-ratio: 12 / 1;
+   border: 0px none;
+   display: block;
+   color: inherit; 
+  }
+
+  &__text {
+    line-height: 1.5;
+    font-size: 1.25rem;
+  }
+}
+
+.blockquote {
+  margin: 0rem;
+  padding-left: 1rem;
+  border-left: .5rem solid;
+  font-size: 1.25rem;
+
+  &__text {
+    font-size: 2rem;
+    font-weight: 900;
+    margin-bottom: .5rem;
+  }
+}
+
+.blocks-colors {
+  gap: 1px;
+  height: 4rem;
+  display: flex;
+  flex-direction: row-reverse;
+  -moz-box-align: stretch;
+  align-items: stretch;
+
+  &__block {
+    -moz-box-flex: 1;
+    flex-grow: 1;
+    background-color: currentcolor;
+    height: 2rem;
+    color: currentcolor;
+
+    @for $i from 1 through 10
+    {
+      &--#{$i} {
+        opacity: 0.1*$i;
+      }
+    }
+  }
+}
