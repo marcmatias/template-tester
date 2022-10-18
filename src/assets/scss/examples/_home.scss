@@ -41,6 +41,18 @@ body {
   margin: 0rem;
 }
 
+.logo {
+  font-weight: 700;
+  border-radius: .25rem;
+  padding: .1rem .25rem;
+
+  &:hover {
+    cursor: pointer;
+    background-color: var(--c-secondary);
+    color: var(--c-primary);
+  }
+}
+
 .theme-toggle {
   text-align: end;
   line-height: 0rem;
@@ -61,6 +73,7 @@ body {
   font-size: 1rem;
   font-weight: 700;
   padding: 1rem;
+  justify-content: space-between;
 }
 
 .container {
@@ -113,6 +126,7 @@ body {
     color: inherit;
     display: block;
     height: .25rem;
+    border: none;
   }
 
   &__hr-stripe {
@@ -141,12 +155,19 @@ body {
       font-size: 1rem;
     }
   }
+
+  &__pre {
+    margin: 1rem 0.1rem;
+    padding: 1rem;
+    box-shadow: currentcolor 0px 0px 0px 1px;
+    font-weight: 600;
+  }
 }
 
 .blockquote {
   margin: 0rem;
   padding-left: 1rem;
-  border-left: .5rem solid;
+  border-left: .30rem solid;
   font-size: 1.25rem;
 
     @include md {
@@ -174,7 +195,6 @@ body {
 
 .blocks-colors {
   gap: 1px;
-  height: 4rem;
   display: flex;
   flex-direction: row-reverse;
   -moz-box-align: stretch;
