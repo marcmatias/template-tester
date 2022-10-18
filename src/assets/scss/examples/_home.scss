@@ -216,3 +216,24 @@ body {
     }
   }
 }
+
+.avatar {
+  margin: 1rem 0rem 1rem 0.1rem;
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+  font-weight: 600;
+
+  &_img-container {
+    width: 44px;
+    box-shadow: currentcolor 0px 0px 0px 2px;
+    border-radius: 9999px;
+    padding: 4px;
+  }
+
+  &__img {
+    display: block;
+    max-width: 100%;
+    border-radius: 9999px;
+  }
+}
